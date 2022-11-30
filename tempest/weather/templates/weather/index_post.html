@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+
+{% load static %}
+{% block additional_scripts %}
+  <script src="{% static 'weather/js/weather_card.js' %}"></script>
+  <script>cardInit("{% url 'weather:history' %}")</script>
+{% endblock %}
+
+{% block content %}
+  {% include "./weather_card_list.html" with show_save=True times=times %}
+
+{% endblock %}

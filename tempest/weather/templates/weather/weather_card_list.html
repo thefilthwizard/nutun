@@ -1,0 +1,5 @@
+<div class="weather-card-list">
+  {% for time in times %}
+    {% include "./weather_card.html" with show_save=show_save time=time %}
+  {% endfor %}
+</div>

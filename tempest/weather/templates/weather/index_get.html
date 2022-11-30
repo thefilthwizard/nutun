@@ -1,0 +1,41 @@
+{% extends "./base.html" %} {% load static %} {% block additional_scripts %}
+<script
+  id="search-js"
+  defer
+  src="https://api.mapbox.com/search-js/v1.0.0-beta.14/web.js"
+></script>
+<script src="{% static 'weather/js/index_get.js' %}"></script>
+<script>
+  initMapBox("{{ mapbox_api_key }}");
+</script>
+{% endblock %} {% block content %} {% load bootstrap_icons %}
+<form id="submit-form" method="post" action="{% url 'weather:index' %}">
+  {% csrf_token %}
+
+  <div class="container">
+    <div class="row height d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="form">
+          <input
+            type="text"
+            class="form-control form-input"
+            placeholder="Enter Address Here"
+            autocomplete="street-address"
+            name="search-text"
+          />
+          <div class="text-right">
+            <button
+              id="search-btn"
+              type="submit"
+              class="btn btn-outline-primary btn-sm"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

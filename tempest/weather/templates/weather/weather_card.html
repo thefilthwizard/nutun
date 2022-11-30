@@ -1,0 +1,20 @@
+<div
+  class="card"
+  data-description="{{ time.description }}"
+  data-dt_txt="{{ time.dt_txt }}"
+  data-icon="{{ time.icon }}"
+  data-dt="{{ time.dt }}"
+  data-location="{{ time.location }}"
+>
+  <img src="{{ time.icon }}" />
+  <h1>{{ time.location }}</h1>
+  <h1>{{ time.description }}</h1>
+  <h1>{{ time.dt_txt }}</h1>
+  {% if show_save %}
+  <div class="text-right">
+    <button type="button" class="btn btn-outline-primary btn-sm save-btn">
+      Save
+    </button>
+  </div>
+  {% endif %}
+</div>

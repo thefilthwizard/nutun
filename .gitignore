@@ -1,0 +1,4 @@
+.venv
+__pycache__
+/tempest/my.cnf
+.DS_Store
