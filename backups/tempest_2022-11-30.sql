@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 8.0.30)
 # Database: tempest
-# Generation Time: 2022-11-30 13:13:03 +0000
+# Generation Time: 2022-11-30 16:10:18 +0000
 # ************************************************************
 
 
@@ -260,7 +260,8 @@ VALUES
 	(18,'weather','0001_initial','2022-11-30 12:56:57.847384'),
 	(19,'weather','0002_historyitem','2022-11-30 12:56:57.859929'),
 	(20,'weather','0003_historyitem_dt','2022-11-30 12:56:57.875472'),
-	(21,'weather','0004_historyitem_location','2022-11-30 12:56:57.891354');
+	(21,'weather','0004_historyitem_location','2022-11-30 12:56:57.891354'),
+	(22,'weather','0005_historyitem_temperature','2022-11-30 14:10:16.216758');
 
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -316,15 +317,19 @@ CREATE TABLE `weather_historyitem` (
   `dt_txt` varchar(255) NOT NULL,
   `dt` int NOT NULL,
   `location` varchar(255) NOT NULL,
+  `temperature` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 LOCK TABLES `weather_historyitem` WRITE;
 /*!40000 ALTER TABLE `weather_historyitem` DISABLE KEYS */;
 
-INSERT INTO `weather_historyitem` (`id`, `description`, `icon`, `dt_txt`, `dt`, `location`)
+INSERT INTO `weather_historyitem` (`id`, `description`, `icon`, `dt_txt`, `dt`, `location`, `temperature`)
 VALUES
-	(1,'clear sky','http://openweathermap.org/img/wn/01d@4x.png','2022-11-30 15:00:00',1669820400,'1234 Justice Mahomed Street');
+	(9,'few clouds','http://openweathermap.org/img/wn/02n@4x.png','2022-11-30 18:00:00',1669831200,'1 First Street','27'),
+	(10,'scattered clouds','http://openweathermap.org/img/wn/03n@4x.png','2022-11-30 21:00:00',1669842000,'1 First Street','23'),
+	(11,'few clouds','http://openweathermap.org/img/wn/02n@4x.png','2022-11-30 18:00:00',1669831200,'2 Second Street','26'),
+	(12,'clear sky','http://openweathermap.org/img/wn/01d@4x.png','2022-12-01 06:00:00',1669874400,'1 1st Street','22');
 
 /*!40000 ALTER TABLE `weather_historyitem` ENABLE KEYS */;
 UNLOCK TABLES;
