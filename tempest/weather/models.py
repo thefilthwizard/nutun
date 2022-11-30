@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class ConfigItem(models.Model):
     key = models.CharField(primary_key=True, max_length=255)
@@ -14,3 +12,4 @@ class HistoryItem(models.Model):
     dt_txt = models.CharField(max_length=255)
     dt = models.IntegerField()
     location = models.CharField(max_length=255)
+    temperature = models.CharField(max_length=255)

@@ -1,18 +1,31 @@
 <div
-  class="card"
+  class="card mx-auto"
+  style="width: 400px; padding: 32px; margin: 16px;"
   data-description="{{ time.description }}"
   data-dt_txt="{{ time.dt_txt }}"
   data-icon="{{ time.icon }}"
   data-dt="{{ time.dt }}"
   data-location="{{ time.location }}"
+  data-temperature="{{ time.temperature }}"
 >
-  <img src="{{ time.icon }}" />
-  <h1>{{ time.location }}</h1>
-  <h1>{{ time.description }}</h1>
-  <h1>{{ time.dt_txt }}</h1>
+  <img
+    class="card-img-top"
+    src="{{ time.icon }}"
+    alt="Card image"
+    style="width: 100%;"
+  />
+  <h3 class="card-title">{{ time.location }}</h3>
+
+  <h4>{{ time.description }}</h4>
+  <h4>{{ time.temperature }} °C</h4>
+  <h4>{{ time.dt_txt }}</h4>
   {% if show_save %}
   <div class="text-right">
-    <button type="button" class="btn btn-outline-primary btn-sm save-btn">
+    <button
+      type="button"
+      class="btn btn-outline-primary btn save-btn"
+      style="color: #56b4f1; border-color: #56b4f1;"
+    >
       Save
     </button>
   </div>

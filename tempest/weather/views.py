@@ -32,6 +32,8 @@ def index_post(request):
                 "dt_txt": item["dt_txt"],
                 "dt": item["dt"],
                 "location": request.POST["search-text"],
+                # convert kelvin to celsius
+                "temperature": int(item["main"]["temp"] - 273.15),
             }
             for item in data["list"]
         ],
@@ -56,3 +58,7 @@ def history_post(request):
 def history_get(request):
     context = {"times": HistoryItem.objects.all().order_by("location", "dt").values()}
     return render(request, "weather/history_get.html", context)
+
+
+def about(request):
+    return render(request, "weather/about.html")
